@@ -24,3 +24,5 @@ namespace SpeakerFreak.ViewModels
         public string ConfirmPassword { get; set; }
     }
 }
+
+// Have to know add Register View .cshtml e.g account/register

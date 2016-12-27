@@ -1,0 +1,26 @@
+﻿@{
+    ViewData["Title"] = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*were as accessing our ViewModel folder and secondly we are allowing the model to pass in Register info hence the m => m.Email coming from the viewModel*@
+
+@using SpeakerFreak.ViewModels
+@model RegisterViewModel
+
+@*First is what is displayed on page, second is the the Controoler involved*@
+@using (Html.BeginForm("Register", "Account", FormMethod.Post))
+{
+    @Html.LabelFor(m => m.Email)
+    @Html.TextBoxFor(m => m.Email)
+
+    @Html.LabelFor(m=> m.Password)
+    @Html.TextBoxFor(m=> m.Password)
+
+    @Html.LabelFor(m=> m.ConfirmPassword)
+    @Html.TextBoxFor(m=> m.ConfirmPassword)
+
+    <input type="submit" value="Register" />
+
+
+}
