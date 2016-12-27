@@ -32,6 +32,12 @@ namespace SpeakerFreak.Controllers
         }
 
         //Creat Register View
+        public IActionResult Register()
+        {
+            return View();
+        }
+
+        
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
             // instantiate a new user , via through applicationUser, which passes our viewModel email. then _userManager (new user) can create password which is also passed through viewModel.
