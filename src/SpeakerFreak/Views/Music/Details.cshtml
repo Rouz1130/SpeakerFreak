@@ -11,7 +11,8 @@
         <h1>Details</h1>
         <hr />
         <br />
-        @Html.DisplayNameFor(model => model.Image_url): @Html.DisplayFor(model => model.Image_url)
+        <br/><img src="@Url.Content(Model.Image_url)" />
+        <br />
         @Html.DisplayNameFor(model => model.Artist): @Html.DisplayFor(model => model.Artist)
        <br />@Html.DisplayNameFor(model => model.Album): @Html.DisplayFor(model => model.Album)
        <br />@Html.DisplayNameFor(model => model.Year): @Html.DisplayFor(model => model.Year)
