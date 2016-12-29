@@ -206,6 +206,8 @@ C:\Users\Rouz\desktop\SpeakerFreak\src\SpeakerFreak\Startup.cs
 C:\Users\Rouz\desktop\SpeakerFreak\src\SpeakerFreak\Controllers\AccountController.cs
 C:\Users\Rouz\desktop\SpeakerFreak\src\SpeakerFreak\Migrations\20161226012242_Initial.cs
 C:\Users\Rouz\desktop\SpeakerFreak\src\SpeakerFreak\Migrations\20161226012242_Initial.Designer.cs
+C:\Users\Rouz\desktop\SpeakerFreak\src\SpeakerFreak\Migrations\20161229035811_AddMusicTable.cs
+C:\Users\Rouz\desktop\SpeakerFreak\src\SpeakerFreak\Migrations\20161229035811_AddMusicTable.Designer.cs
 C:\Users\Rouz\desktop\SpeakerFreak\src\SpeakerFreak\Migrations\ApplicationDbContextModelSnapshot.cs
 C:\Users\Rouz\desktop\SpeakerFreak\src\SpeakerFreak\Models\ApplicationDbContext.cs
 C:\Users\Rouz\desktop\SpeakerFreak\src\SpeakerFreak\Models\ApplicationUser.cs
