@@ -183,17 +183,35 @@ namespace SpeakerFreak.Migrations
 
                     b.Property<string>("Genre");
 
-                    b.Property<string>("Rating");
+                    b.Property<string>("Image_url");
 
-                    b.Property<string>("UserId");
+                    b.Property<string>("Rating");
 
                     b.Property<int>("Year");
 
                     b.HasKey("Id");
 
+                    b.ToTable("Musicians");
+                });
+
+            modelBuilder.Entity("SpeakerFreak.Models.Review", b =>
+                {
+                    b.Property<int>("ReviewId")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("Commments");
+
+                    b.Property<DateTime>("Date");
+
+                    b.Property<string>("Name");
+
+                    b.Property<string>("UserId");
+
+                    b.HasKey("ReviewId");
+
                     b.HasIndex("UserId");
 
-                    b.ToTable("Musicians");
+                    b.ToTable("Reviews");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.EntityFrameworkCore.IdentityRoleClaim<string>", b =>
@@ -233,7 +251,7 @@ namespace SpeakerFreak.Migrations
                         .OnDelete(DeleteBehavior.Cascade);
                 });
 
-            modelBuilder.Entity("SpeakerFreak.Models.Music", b =>
+            modelBuilder.Entity("SpeakerFreak.Models.Review", b =>
                 {
                     b.HasOne("SpeakerFreak.Models.ApplicationUser", "User")
                         .WithMany()
