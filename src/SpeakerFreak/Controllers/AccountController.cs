@@ -46,10 +46,10 @@ namespace SpeakerFreak.Controllers
             if (result.Succeeded)
             {
                 return RedirectToAction("Index");
-            }
+            } // still have to create error page once models are made will do that.
             else
             {
-                return View();
+                return View("Error");
             }
         }
 
@@ -83,6 +83,7 @@ namespace SpeakerFreak.Controllers
         //    return View();
         //}
 
+        // No need to have a its own view page.
         [HttpPost]
         public async Task<IActionResult> LogOff()
         {

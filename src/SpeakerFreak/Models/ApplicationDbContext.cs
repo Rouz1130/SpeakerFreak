@@ -13,5 +13,10 @@ namespace SpeakerFreak.Models
         {
             //need to have this open constructor part to not have error 
         }
+        protected override void OnModelCreating(ModelBuilder builder)
+        {
+            base.OnModelCreating(builder);
+        }
+        public DbSet<Music> Musicians { get; set; }
     }
 }

@@ -56,6 +56,7 @@ namespace SpeakerFreak
             app.UseIdentity();
             app.UseMvc(routes =>
             {
+
                 routes.MapRoute(
                     name: "default",
                     template: "{controller=Account}/{action=Index}/{id?}");
