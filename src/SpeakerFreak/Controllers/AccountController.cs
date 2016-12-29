@@ -69,7 +69,7 @@ namespace SpeakerFreak.Controllers
 
             if (result.Succeeded)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Index", "Music");
             }
             else
             {
