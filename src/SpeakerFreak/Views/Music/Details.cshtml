@@ -1,0 +1,24 @@
+﻿@{
+    ViewData["Title"] = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@model SpeakerFreak.Models.Music
+<html>
+<body>
+    <div class="container">
+        <h1>Details</h1>
+        <hr />
+        <br />
+        @Html.DisplayNameFor(model => model.Image_url): @Html.DisplayFor(model => model.Image_url)
+        @Html.DisplayNameFor(model => model.Artist): @Html.DisplayFor(model => model.Artist)
+       <br />@Html.DisplayNameFor(model => model.Album): @Html.DisplayFor(model => model.Album)
+       <br />@Html.DisplayNameFor(model => model.Year): @Html.DisplayFor(model => model.Year)
+       <br/>@Html.DisplayNameFor(model => model.Genre): @Html.DisplayFor(model => model.Genre)
+       <br />@Html.DisplayNameFor(model => model.Rating): @Html.DisplayFor(model => model.Rating)
+
+        <p>@Html.ActionLink("Back to products list", "Index")</p>
+    </div>
+</body>
+</html>
