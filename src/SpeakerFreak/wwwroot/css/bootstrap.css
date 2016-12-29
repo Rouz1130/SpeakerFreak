@@ -240,6 +240,7 @@ th {
   }
   .navbar {
     display: none;
+    color:aqua;
   }
   .btn > .caret,
   .dropup > .btn > .caret {
@@ -4037,6 +4038,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
   color: #555;
   cursor: default;
   background-color: #fff;
+
   border: 1px solid #ddd;
   border-bottom-color: transparent;
 }
@@ -4230,6 +4232,7 @@ select[multiple].input-group-sm > .input-group-btn > .btn {
 .container-fluid > .navbar-collapse {
   margin-right: -15px;
   margin-left: -15px;
+
 }
 @media (min-width: 768px) {
   .container > .navbar-header,
@@ -4589,7 +4592,7 @@ fieldset[disabled] .navbar-default .btn-link:focus {
   color: #ccc;
 }
 .navbar-inverse {
-  background-color: #222;
+  background-color: #22;
   border-color: #080808;
 }
 .navbar-inverse .navbar-brand {
@@ -4966,7 +4969,7 @@ a.badge:focus {
 .jumbotron .h1 {
   color: inherit;
 }
-.jumbotron p {
+.jumbotron p 
   margin-bottom: 15px;
   font-size: 21px;
   font-weight: 200;

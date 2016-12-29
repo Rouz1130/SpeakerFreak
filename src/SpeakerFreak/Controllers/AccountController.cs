@@ -37,7 +37,7 @@ namespace SpeakerFreak.Controllers
             return View();
         }
 
-        
+        [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
             // instantiate a new user , via through applicationUser, which passes our viewModel email. then _userManager (new user) can create password which is also passed through viewModel.
@@ -53,5 +53,43 @@ namespace SpeakerFreak.Controllers
             }
         }
 
-    }
+
+        public IActionResult Login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public async Task<IActionResult> Login(LoginViewModel model)
+        {
+            //LoginView Model
+            // SigninAsync is to allow user to sign who have already registred.
+            // True (isPresistent) keeps user logged even if they have not logged off. e.g email keeps password unless manually user logs out
+            Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: true, lockoutOnFailure: false);
+
+            if (result.Succeeded)
+            {
+                return RedirectToAction("Index");
+            }
+            else
+            {
+                return View();
+            }
+        }
+
+
+        //public IActionResult Error()
+        //{
+        //    return View();
+        //}
+
+        [HttpPost]
+        public async Task<IActionResult> LogOff()
+        {
+            await _signInManager.SignOutAsync();
+
+            return RedirectToAction("Index");
+        }
+     }
 }
+
