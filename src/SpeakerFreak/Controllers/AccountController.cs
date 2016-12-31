@@ -31,16 +31,18 @@ namespace SpeakerFreak.Controllers
             return View();
         }
 
+
         //Creat Register View
         public IActionResult Register()
         {
             return View();
         }
 
+
         [HttpPost]
         public async Task<IActionResult> Register(RegisterViewModel model)
         {
-            // instantiate a new user , via through applicationUser, which passes our viewModel email. then _userManager (new user) can create password which is also passed through viewModel.
+
             var user = new ApplicationUser { UserName = model.Email };
             IdentityResult result = await _userManager.CreateAsync(user, model.Password);
             if (result.Succeeded)
@@ -49,7 +51,7 @@ namespace SpeakerFreak.Controllers
             } // still have to create error page once models are made will do that.
             else
             {
-                return View("Error");
+                return View();
             }
         }
 
@@ -59,6 +61,7 @@ namespace SpeakerFreak.Controllers
             return View();
         }
 
+        
         [HttpPost]
         public async Task<IActionResult> Login(LoginViewModel model)
         {
@@ -69,7 +72,7 @@ namespace SpeakerFreak.Controllers
 
             if (result.Succeeded)
             {
-                return RedirectToAction("Index", "Music");
+                return RedirectToAction("Index");
             }
             else
             {
@@ -78,19 +81,20 @@ namespace SpeakerFreak.Controllers
         }
 
 
-        //public IActionResult Error()
-        //{
-        //    return View();
-        //}
-
         // No need to have a its own view page.
         [HttpPost]
-        public async Task<IActionResult> LogOff()
+        public async Task<IActionResult> LogOut()
         {
             await _signInManager.SignOutAsync();
-
-            return RedirectToAction("Index");
+            return RedirectToAction("Register");
         }
+
+        //[HttpPost]
+        //public async Task<IActionResult> LogOut()
+        //{
+        //    await _signInManager.SignOutAsync();
+        //    return RedirectToAction("Index");
+        //}
      }
 }
 

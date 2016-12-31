@@ -13,12 +13,13 @@
         <br />
         <br/><img src="@Url.Content(Model.Image_url)" />
         <br />
-        @Html.DisplayNameFor(model => model.Artist): @Html.DisplayFor(model => model.Artist)
+              @Html.DisplayNameFor(model => model.Artist): @Html.DisplayFor(model => model.Artist)
        <br />@Html.DisplayNameFor(model => model.Album): @Html.DisplayFor(model => model.Album)
        <br />@Html.DisplayNameFor(model => model.Year): @Html.DisplayFor(model => model.Year)
        <br/>@Html.DisplayNameFor(model => model.Genre): @Html.DisplayFor(model => model.Genre)
        <br />@Html.DisplayNameFor(model => model.Rating): @Html.DisplayFor(model => model.Rating)
 
+        <p>@Html.ActionLink("Review", "Index", "Review")</p>
         <p>@Html.ActionLink("Back to products list", "Index")</p>
     </div>
 </body>

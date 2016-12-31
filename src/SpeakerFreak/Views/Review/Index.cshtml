@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Log In";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+
+@model IEnumerable<SpeakerFreak.Models.Review>
+
+
+<div class="container">
+    <h2>Reviews</h2>
+    @foreach (var listReview in Model)
+    {
+     
+            
+                @Html.DisplayFor(modelReview => listReview.Name)
+                <br />
+                @Html.DisplayFor(modelReview => listReview.Date)
+                <br /> <br />
+
+             
+                <br />
+                @Html.DisplayFor(modelBlog => listReview.Commments)
+                <br />
+                @Html.ActionLink("Edit", "Edit", new { id = listReview.ReviewId }) 
+                @Html.ActionLink("Details", "Details", new { id = listReview.ReviewId }) 
+                @Html.ActionLink("Delete", "Delete", new { id = listReview.ReviewId });
+
+             
+
+    }
+
+    </div>

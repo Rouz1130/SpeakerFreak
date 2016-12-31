@@ -202,9 +202,11 @@
 --reference:C:\Users\Rouz\.nuget\packages\System.Xml.XDocument\4.0.11\ref\netstandard1.3\System.Xml.XDocument.dll
 --resource:"C:\Users\Rouz\Desktop\SpeakerFreak\src\SpeakerFreak\obj\Debug\netcoreapp1.0\SpeakerFreakdotnet-compile.deps.json",SpeakerFreak.deps.json
 C:\Users\Rouz\Desktop\SpeakerFreak\src\SpeakerFreak\Program.cs
+C:\Users\Rouz\Desktop\SpeakerFreak\src\SpeakerFreak\ReviewModel.cs
 C:\Users\Rouz\Desktop\SpeakerFreak\src\SpeakerFreak\Startup.cs
 C:\Users\Rouz\Desktop\SpeakerFreak\src\SpeakerFreak\Controllers\AccountController.cs
 C:\Users\Rouz\Desktop\SpeakerFreak\src\SpeakerFreak\Controllers\MusicController.cs
+C:\Users\Rouz\Desktop\SpeakerFreak\src\SpeakerFreak\Controllers\ReviewController.cs
 C:\Users\Rouz\Desktop\SpeakerFreak\src\SpeakerFreak\Migrations\20161229054628_Initial.cs
 C:\Users\Rouz\Desktop\SpeakerFreak\src\SpeakerFreak\Migrations\20161229054628_Initial.Designer.cs
 C:\Users\Rouz\Desktop\SpeakerFreak\src\SpeakerFreak\Migrations\ApplicationDbContextModelSnapshot.cs

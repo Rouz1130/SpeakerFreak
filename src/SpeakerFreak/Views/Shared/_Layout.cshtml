@@ -60,7 +60,10 @@
                             @Html.ActionLink("Artists", "Index", "Music", null, new { @class = "nav navbar-nav" })
                         </li>
                         <li>
-                            <a href="#">Contact</a>
+                            @Html.ActionLink("Review Page", "Index", "Review", null, new{ @class = "nav navbar-nav"})
+                        </li>
+                        <li>
+                            @Html.ActionLink("Log in", "Login", null, new  { @class = "nav navbar-nav"})
                         </li>
                     </ul>
                 </div>
@@ -71,7 +74,7 @@
         <div>
             <div class="jumbotron jumbotron-fluid">
                 <div class="container">
-                    <img class="item__image" src="http://www.therooster.com/sites/default/files/userfiles/images/HipHopBanner.jpg" />
+                    @*<img class="item__image" src="https://cdn.pixabay.com/photo/2015/10/29/14/44/sunset-1012477_960_720.jpg" />*@
                 </div>
             </div>      
         </div> 
