@@ -1,34 +1,32 @@
-﻿@model IEnumerable<SpeakerFreak.Models.Review>
+﻿    @model IEnumerable<SpeakerFreak.Models.Review>
 
-@{
-    ViewData["Title"] = "Log In";
-    Layout = "~/Views/Shared/_Layout.cshtml";
-}
+    @{
+        ViewData["Title"] = "Log In";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
 
-
-
-
-<div class="container">
-
-    <h2>@Html.ActionLink("Add Review","Create", "Review")</h2>
+    <div class="container space-lg">
+    <h2>Add Review</h2>
     <hr />
     <br />
 
     @foreach (var listReview in Model)
     {
-     
-            
-                <h4>@Html.DisplayFor(modelReview => listReview.Name)</h4>
-                <br />
-                <h4>@Html.DisplayFor(modelReview => listReview.Date)</h4>
-                <br />
-                <h4>@Html.DisplayFor(modelReview => listReview.Commments)</h4>
-                <br />
-                <h4>@Html.ActionLink("Details", "Details", new { id = listReview.ReviewId })</h4>
-                <h4>@Html.ActionLink("Delete", "Delete", new { id = listReview.ReviewId })</h4>;
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <h3><b>Name:</b>&nbsp;@Html.DisplayFor(modelReview => listReview.Name)</h3>
+            <h3><b>Date:&nbsp;</b> @Html.DisplayFor(modelReview => listReview.Date)</h3>
+            <h3><b>Date:&nbsp;</b>@Html.DisplayFor(modelReview => listReview.Commments)</h3>
+            <br />
 
-             
+            @Html.ActionLink("Add Review", "Create", new { id = listReview.ReviewId }, new { @class = "btn btn-primary btn-active", @style = "color:white" })
+            <br />
+            <br />
+           @Html.ActionLink("Details", "Details", new { id = listReview.ReviewId }, new { @class = "btn btn-primary btn-active", @style = "color:white" })
+            <br />
+            <br />
+            @Html.ActionLink("Delete", "Delete", new { id = listReview.ReviewId }, new { @class = "btn btn-primary btn-active", @style = "color:white" })
 
-    }
+        </div>
+            }
 
-    </div>
+        </div>

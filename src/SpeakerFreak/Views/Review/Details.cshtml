@@ -8,15 +8,15 @@
 <div class="container">
     <h3>SpeakerFreak Review Details</h3>
     <hr />
+    <h3><b>@Html.DisplayNameFor(model => model.Name)</b>: @Html.DisplayFor(model => model.Name)</h3>
+    <h3><b>@Html.DisplayNameFor(model => model.Date)</b>: @Html.DisplayFor(model => model.Date)</h3>
+    <h3><b>@Html.DisplayNameFor(model => model.Commments)</b>: @Html.DisplayFor(model => model.Commments)</h3>
+    <br />
+    <br />
+    @using (Html.BeginForm())
+    {
+        <h4>@Html.ActionLink("Back to Review", "Index", "Review")</h4>
 
-
-    @Html.DisplayNameFor(model => model.Name)
-    <br />
-    @Html.DisplayNameFor(model => model.Date)
-    <br /> <br />
-    <br />
-    @Html.DisplayNameFor(model => model.Commments)
-    <br />
-    <h3>@Html.ActionLink("Reviews","Index","Review")</h3>
+    }
 
 </div>

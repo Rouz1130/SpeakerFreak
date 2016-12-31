@@ -45,14 +45,10 @@ namespace SpeakerFreak
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
 
-            loggerFactory.AddConsole();
 
-            if (env.IsDevelopment())
-            {
-                app.UseDeveloperExceptionPage();
-            }
 
             //Add useIdentity, MVC routes
+            app.UseStaticFiles();
             app.UseIdentity();
             app.UseMvc(routes =>
             {

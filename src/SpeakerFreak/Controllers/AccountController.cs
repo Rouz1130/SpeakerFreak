@@ -63,16 +63,16 @@ namespace SpeakerFreak.Controllers
 
         
         [HttpPost]
-        public async Task<IActionResult> Login(LoginViewModel model)
+        public async Task<IActionResult> Login(LoginViewModel user)
         {
             //LoginView Model
             // SigninAsync is to allow user to sign who have already registred.
             // True (isPresistent) keeps user logged even if they have not logged off. e.g email keeps password unless manually user logs out
-            Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(model.Email, model.Password, isPersistent: true, lockoutOnFailure: false);
+            Microsoft.AspNetCore.Identity.SignInResult result = await _signInManager.PasswordSignInAsync(user.Email, user.Password, isPersistent: true, lockoutOnFailure: false);
 
             if (result.Succeeded)
             {
-                return RedirectToAction("Index");
+                return RedirectToAction("Index","Account");
             }
             else
             {
@@ -82,19 +82,12 @@ namespace SpeakerFreak.Controllers
 
 
         // No need to have a its own view page.
-        [HttpPost]
-        public async Task<IActionResult> LogOut()
+        [HttpPost]       
+        public async Task<IActionResult> LogOff()
         {
             await _signInManager.SignOutAsync();
-            return RedirectToAction("Register");
+            return RedirectToAction("Index");
         }
-
-        //[HttpPost]
-        //public async Task<IActionResult> LogOut()
-        //{
-        //    await _signInManager.SignOutAsync();
-        //    return RedirectToAction("Index");
-        //}
-     }
+    }
 }
 

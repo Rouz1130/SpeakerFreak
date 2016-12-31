@@ -6,14 +6,18 @@
 }
 
 <div class="container">
-    <h3>Delete Review</h3>
+    <h2>Proceed too Delete this Review</h2>
+    <hr />
     <br />
-    @Html.DisplayFor(model => model.Name): @Html.DisplayFor(model => model.Date): @Html.DisplayFor(model => model.Commments)
+    <h3><b>Name:</b>&nbsp;@Html.DisplayFor(model => model.Name)</h3>
+    <h3><b>Date:</b>&nbsp;@Html.DisplayFor(model => model.Date)</h3>
+    <h3><b>Comments:</b>&nbsp;@Html.DisplayFor(model => model.Commments)</h3>
+    <br />
     @using (Html.BeginForm())
     {
-        <input type="submit" value="Delete"/>
-
+        <input type="submit" value="Delete" class= "btn btn-danger btn-md active"/>
+   
     }
-
-    @Html.ActionLink("Back to Review", "Index")
+    <br />
+    @Html.ActionLink("Back to Review", "Index","Review")
 </div>
