@@ -6,6 +6,7 @@ using Microsoft.AspNetCore.Mvc;
 using SpeakerFreak.Models;
 using Microsoft.AspNetCore.Identity;
 using SpeakerFreak.ViewModels;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -88,6 +89,12 @@ namespace SpeakerFreak.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index");
         }
+
+        //[Authorize]
+        //public IActionResult Review()
+        //{
+        //    return View(_db.Reviewers.ToList());
+        //}
     }
 }
 

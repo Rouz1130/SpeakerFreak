@@ -6,17 +6,22 @@
 @model IEnumerable<SpeakerFreak.Models.Music>
 
 
-<div class="container">
-    <h2>Top Selling Artists</h2>
-    
+    @if (User.Identity.IsAuthenticated)
+    {
+
+        <div class="text-center">
+            <h4>Hello @User.Identity.Name</h4>
+         </div>
+
+
     @foreach (var listMuscians in Model)
     {
         <h2> @Html.DisplayFor(modelItem => listMuscians.Artist)</h2>
         <img src="@listMuscians.Image_url" alt="Album Cover" />
-        <h2>@Html.ActionLink("More Info","Details", new {id = listMuscians.Id })</h2>
+        <h2>@Html.ActionLink("More Info", "Details", new { id = listMuscians.Id })</h2>
 
     }
-    </div>
+  }
 
 @*</div>
 

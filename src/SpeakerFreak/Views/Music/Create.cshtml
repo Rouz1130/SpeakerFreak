@@ -1,18 +1,22 @@
 ﻿
-@model SpeakerFreak.Models.Music
-
 @{
     ViewData["Title"] = "Music";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @using System.Security.Claims
+@model SpeakerFreak.Models.Music
 
 <div class="container">
-    <h2>Add Muscian/Artist</h2>
+    <h2>Add Artist</h2>
     <hr />
-    @using (Html.BeginForm())
+    @if (User.Identity.IsAuthenticated)
     {
+        <h4>Create an artist</h4>
+
+
+    @using (Html.BeginForm())
+        {
         @Html.LabelFor(model => model.Artist)
         @Html.TextBoxFor(model => model.Artist)
         <br />
@@ -31,12 +35,13 @@
         @Html.LabelFor(model => model.Rating)
         @Html.TextBoxFor(model => model.Rating)
         <br />
-       
+
+
 
         <input type="submit" value="CreateMusic" class="btn btn-success" />
 
-    }
-
+      }
+  }
 
     @Html.ActionLink("Back to Artists","Index","Music")
 
