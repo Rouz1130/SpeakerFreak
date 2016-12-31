@@ -40,5 +40,20 @@ namespace SpeakerFreak.Controllers
             db.SaveChanges();
             return RedirectToAction("Index");
         }
+
+        public IActionResult Delete(int id)
+        {
+            var thisReview = db.Reviews.FirstOrDefault(model => model.ReviewId == id);
+            return View(thisReview);
+        }
+
+        [HttpPost, ActionName("Delete")]
+        public IActionResult DeleteConfrimed(int id)
+        {
+            var thisReview = db.Reviews.FirstOrDefault(model => model.ReviewId == id);
+            db.Reviews.Remove(thisReview);
+            db.SaveChanges();
+            return RedirectToAction("Index");
+        }
     }
 }

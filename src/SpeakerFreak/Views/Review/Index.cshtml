@@ -9,25 +9,23 @@
 
 
 <div class="container">
-    <h2>Reviews</h2>
 
-    <h3>@Html.ActionLink("Add Review","Create", "Review")</h3>
+    <h2>@Html.ActionLink("Add Review","Create", "Review")</h2>
+    <hr />
     <br />
 
     @foreach (var listReview in Model)
     {
      
             
-                @Html.DisplayFor(modelReview => listReview.Name)
+                <h4>@Html.DisplayFor(modelReview => listReview.Name)</h4>
                 <br />
-                @Html.DisplayFor(modelReview => listReview.Date)
-                <br /> <br />
+                <h4>@Html.DisplayFor(modelReview => listReview.Date)</h4>
                 <br />
-                @Html.DisplayFor(modelReview => listReview.Commments)
+                <h4>@Html.DisplayFor(modelReview => listReview.Commments)</h4>
                 <br />
-                @Html.ActionLink("Edit", "Edit", new { id = listReview.ReviewId }) 
-                @Html.ActionLink("Details", "Details", new { id = listReview.ReviewId }) 
-                @Html.ActionLink("Delete", "Delete", new { id = listReview.ReviewId });
+                <h4>@Html.ActionLink("Details", "Details", new { id = listReview.ReviewId })</h4>
+                <h4>@Html.ActionLink("Delete", "Delete", new { id = listReview.ReviewId })</h4>;
 
              
 

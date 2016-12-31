@@ -1,0 +1,19 @@
+﻿@model SpeakerFreak.Models.Review
+
+@{
+    ViewData["Title"] = "Log In";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h3>Delete Review</h3>
+    <br />
+    @Html.DisplayFor(model => model.Name): @Html.DisplayFor(model => model.Date): @Html.DisplayFor(model => model.Commments)
+    @using (Html.BeginForm())
+    {
+        <input type="submit" value="Delete"/>
+
+    }
+
+    @Html.ActionLink("Back to Review", "Index")
+</div>
