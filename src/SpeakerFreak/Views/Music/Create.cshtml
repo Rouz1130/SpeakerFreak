@@ -1,13 +1,14 @@
-﻿
+﻿@model SpeakerFreak.Models.Music
+
 @{
     ViewData["Title"] = "Music";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-@using System.Security.Claims
-@model SpeakerFreak.Models.Music
+@*@using System.Security.Claims*@
 
-<div class="container">
+
+<div class="container space-lg">
     <h2>Add Artist</h2>
     <hr />
     @if (User.Identity.IsAuthenticated)
@@ -38,7 +39,7 @@
 
 
 
-        <input type="submit" value="CreateMusic" class="btn btn-success" />
+        <input type="submit" value="Upload" class="btn btn-primary" />
 
       }
   }

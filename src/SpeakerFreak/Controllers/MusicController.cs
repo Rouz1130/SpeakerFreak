@@ -15,10 +15,11 @@ namespace SpeakerFreak.Controllers
     {
         private ApplicationDbContext _db = new ApplicationDbContext();
 
+
         public MusicController(ApplicationDbContext db)
         {
             _db = db;
-           
+
         }
 
         public IActionResult Index()
@@ -26,23 +27,26 @@ namespace SpeakerFreak.Controllers
             return View(_db.Musicians.ToList());
         }
 
+
         public IActionResult Details(int id)
         {
             var thisMusic = _db.Musicians.FirstOrDefault(Musicians => Musicians.Id == id);
             return View(thisMusic);
         }
 
+
         public IActionResult Create()
         {
             return View();
         }
+
 
         [HttpPost]
         public IActionResult Create(Music music)
         {
             _db.Musicians.Add(music);
             _db.SaveChanges();
-            return RedirectToAction("Details","Music");
+            return RedirectToAction( "Index");
         }
     }
 }

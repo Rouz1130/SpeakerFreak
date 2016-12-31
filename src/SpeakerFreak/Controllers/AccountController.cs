@@ -90,11 +90,8 @@ namespace SpeakerFreak.Controllers
             return RedirectToAction("Index");
         }
 
-        //[Authorize]
-        //public IActionResult Review()
-        //{
-        //    return View(_db.Reviewers.ToList());
-        //}
+    
+       
     }
 }
 
