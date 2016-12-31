@@ -1,0 +1,22 @@
+﻿@model SpeakerFreak.Models.Review
+
+@{
+    ViewData["Title"] = "Log In";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container">
+    <h3>SpeakerFreak Review Details</h3>
+    <hr />
+
+
+    @Html.DisplayNameFor(model => model.Name)
+    <br />
+    @Html.DisplayNameFor(model => model.Date)
+    <br /> <br />
+    <br />
+    @Html.DisplayNameFor(model => model.Commments)
+    <br />
+    <h3>@Html.ActionLink("Reviews","Index","Review")</h3>
+
+</div>

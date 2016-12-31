@@ -1,14 +1,19 @@
-﻿@{
+﻿@model IEnumerable<SpeakerFreak.Models.Review>
+
+@{
     ViewData["Title"] = "Log In";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 
-@model IEnumerable<SpeakerFreak.Models.Review>
 
 
 <div class="container">
     <h2>Reviews</h2>
+
+    <h3>@Html.ActionLink("Add Review","Create", "Review")</h3>
+    <br />
+
     @foreach (var listReview in Model)
     {
      
@@ -17,10 +22,8 @@
                 <br />
                 @Html.DisplayFor(modelReview => listReview.Date)
                 <br /> <br />
-
-             
                 <br />
-                @Html.DisplayFor(modelBlog => listReview.Commments)
+                @Html.DisplayFor(modelReview => listReview.Commments)
                 <br />
                 @Html.ActionLink("Edit", "Edit", new { id = listReview.ReviewId }) 
                 @Html.ActionLink("Details", "Details", new { id = listReview.ReviewId }) 

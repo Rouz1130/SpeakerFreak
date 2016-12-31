@@ -13,16 +13,19 @@ namespace SpeakerFreak.Controllers
     {
         // GET: /<controller>/
         private ApplicationDbContext db = new ApplicationDbContext();
+        private ReviewModel theView = new ReviewModel();
+
+
         public IActionResult Index()
         {
             //add arrange blog by newest first 
-            var thisReview = db.Reviews.OrderByDescending(r => r.ReviewId);
+            var thisReview = db.Reviews.OrderByDescending(model => model.ReviewId);
             //return list of blogs 
             return View(thisReview.ToList());
         }
         public IActionResult Details(int id)
         {
-            var thisReview = db.Reviews.FirstOrDefault(r => r.ReviewId == id);
+            var thisReview = db.Reviews.FirstOrDefault(model => model.ReviewId == id);
             return View(thisReview);
         }
         public IActionResult Create()
