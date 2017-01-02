@@ -10,6 +10,13 @@
     <hr />
     <br />
 
+    @if (User.Identity.IsAuthenticated)
+    {
+
+        <div class="text-center">
+            <h4>Hello @User.Identity.Name</h4>
+        </div>
+
     @foreach (var listReview in Model)
     {
         <div class="col-sm-4 col-lg-4 col-md-4">
@@ -27,6 +34,7 @@
             @Html.ActionLink("Delete", "Delete", new { id = listReview.ReviewId }, new { @class = "btn btn-primary btn-active", @style = "color:white" })
 
         </div>
-            }
+        }
+    }
 
         </div>

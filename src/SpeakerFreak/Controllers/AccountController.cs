@@ -52,7 +52,7 @@ namespace SpeakerFreak.Controllers
             } // still have to create error page once models are made will do that.
             else
             {
-                return View();
+                return View("Error");
             }
         }
 
@@ -77,8 +77,13 @@ namespace SpeakerFreak.Controllers
             }
             else
             {
-                return View();
+                return View("Error");
             }
+        }
+
+        public IActionResult Error()
+        {
+            return View();
         }
 
 
@@ -89,8 +94,6 @@ namespace SpeakerFreak.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index");
         }
-
-    
        
     }
 }
