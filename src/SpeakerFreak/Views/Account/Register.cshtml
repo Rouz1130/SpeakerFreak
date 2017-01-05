@@ -1,36 +1,46 @@
 ﻿@{
     ViewData["Title"] = "Register";
-    Layout = "~/Views/Shared/_Layout.cshtml";
+    Layout = "~/Views/Shared/_LayoutNav.cshtml";
 }
 
 @*were as accessing our ViewModel folder and secondly we are allowing the model to pass in Register info hence the m => m.Email coming from the viewModel*@
 
 
-<div class="container">
+<div class="container" align="center">
 
     @using SpeakerFreak.ViewModels
     @model RegisterViewModel
 
-    <h2>Register new user</h2>
+    <h1 align="left">Register new user</h1>
     <hr />
-   
-    @using (Html.BeginForm("Register", "Account", FormMethod.Post))
-    {
-   
+    <br />
+        @using (Html.BeginForm("Register", "Account", FormMethod.Post))
 
-        @Html.LabelFor(m => m.Email)
-        <br />
-        @Html.TextBoxFor(m => m.Email)
-        <br />
-        @Html.LabelFor(m => m.Password)
-        <br />
-        @Html.PasswordFor(m => m.Password)
-        <br />
-        @Html.LabelFor(m => m.ConfirmPassword)
-        <br />
-        @Html.PasswordFor(m => m.ConfirmPassword)
-        <br />
+            {
+            <div class="row col-md-6">
+                <div class="col-md-6">
+                    <div class="list-group">
+                        <div class="list-group-item">
+                            @Html.LabelFor(m => m.Email)
+                            <br />
+                            @Html.TextBoxFor(m => m.Email)
+                            <br />
+                            <br />
+                            @Html.LabelFor(m => m.Password)
+                            <br />
+                            @Html.PasswordFor(m => m.Password)
+                            <br />
+                            <br />
+                            @Html.LabelFor(m => m.ConfirmPassword)
+                            <br />
+                            @Html.PasswordFor(m => m.ConfirmPassword)
+                            <br />
+                            <br />
+                            <input type="submit" value="Register" class="btn- btn-primary btn-md" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
 
-        <input type="submit" value="Register" class="btn- btn-success btn-sm" />
-    }
-</div>

@@ -13,6 +13,7 @@
     @if (User.Identity.IsAuthenticated)
     {
 
+        <p>@Html.ActionLink("Add Review", "Create","Review")</p>
         <div class="text-center">
             <h4>Hello @User.Identity.Name</h4>
         </div>

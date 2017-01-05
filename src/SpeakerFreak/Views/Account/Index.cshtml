@@ -1,13 +1,13 @@
 ﻿@{
     ViewData["Title"] = "Index";
-    Layout = "~/Views/Shared/_LayoutMusic.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 @using System.Security.Claims
 
 
       <div class="container">
-        <h1>Register/Sign up</h1>
+        <h4>Register/Sign up</h4>
         <hr/>
 
         @if (User.Identity.IsAuthenticated)
@@ -16,13 +16,13 @@
             <h3>Welcome Back:&nbsp; @User.Identity.Name</h3>
 
 
-            @using (Html.BeginForm("LogOff","Account"))
+            @using (Html.BeginForm("LogOff", "Account"))
             {
 
-                <input type="submit" class="btn btn-success" value="Log out" />
+              <input type="submit" class="btn btn-danger btn-md" value="Log out" />
 
+                }
             }
-        }
         else
         {
             <p>@Html.ActionLink("Register", "Register")</p>
