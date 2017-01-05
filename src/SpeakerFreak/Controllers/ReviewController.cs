@@ -18,9 +18,9 @@ namespace SpeakerFreak.Controllers
 
         public IActionResult Index()
         {
-            //add arrange blog by newest first 
+            
             var thisReview = db.Reviews.OrderByDescending(model => model.ReviewId);
-            //return list of blogs 
+      
             return View(thisReview.ToList());
         }
         public IActionResult Details(int id)

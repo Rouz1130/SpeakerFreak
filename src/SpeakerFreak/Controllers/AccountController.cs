@@ -17,7 +17,8 @@ namespace SpeakerFreak.Controllers
         private readonly ApplicationDbContext _db;
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
-    
+        private IEnumerable<IdentityError> myErrors { get; set; }
+
         public AccountController(UserManager<ApplicationUser> userManager, SignInManager<ApplicationUser> signInManager,ApplicationDbContext db)
         {
 
