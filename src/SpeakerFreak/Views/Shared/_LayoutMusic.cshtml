@@ -40,19 +40,18 @@
                     <span class="icon-bar"></span>
                 </button>
                 <h3 class="navbar-brand" style="font-size:40px;text-shadow:4px 4px 4px #666;" >SpeakerFreak</h3>
-                <a class="navbar-brand glyphicon glyphicon-home fa-lg" href="#"></a>
             </div>
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
                     <li>
-                        <a href="#">About</a>
+                        @Html.ActionLink("Register", "Register", "Account", null, new { @class = "nav navbar-nav" })
                     </li>
                     <li>
-                        <a href="#">Services</a>
+                        @Html.ActionLink("Artists", "Index", "Music", null, new { @class = "nav navbar-nav" })
                     </li>
                     <li>
-                        <a href="#">Contact</a>
+                        @Html.ActionLink("Review Page", "Index", "Review", null, new { @class = "nav navbar-nav" })
                     </li>
                 </ul>
             </div>
@@ -77,8 +76,7 @@
                 <div class="list-group">
                     <a class="list-group-item" href="/Account/Login"><input type="submit" value="Log in" class="btn btn-success btn-sm form-control" /></a>
                     <a class="list-group-item" href="Account/Register"><label type="submit" value="Register" class="btn btn-success form-control">Sign in</label></a>
-                   <a class="list-group-item" href="Account/LogOff"><input type="submit" value="Log out" class="btn-btn-success" /></a>
-                    <h3>@Html.ActionLink("Logoff", "Logoff", "Account", null, new { @class = "demos__item" })</h3>
+                   
                 </div>
             </div>
             <div class="col-md-9">

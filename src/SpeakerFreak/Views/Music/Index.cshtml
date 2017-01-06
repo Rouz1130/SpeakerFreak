@@ -10,17 +10,40 @@
     {
 
 
-        <input type="submit" value="Create" class="btn btn-primary" />
         <div class="text-center">
-            <h4>Hello @User.Identity.Name</h4>
+            <h2 align="center">Welcome Back&nbsp;@User.Identity.Name</h2>
          </div>
 
 
     @foreach (var listMuscians in Model)
     {
-        <h2> @Html.DisplayFor(modelItem => listMuscians.Artist)</h2>
-        <img src="@listMuscians.Image_url" alt="Album Cover" />
-        <h2>@Html.ActionLink("More Info", "Details", new { id = listMuscians.Id })</h2>
+        <div class="col-sm-4 col-lg-4 col-md-4">
+            <div class="thumbnail">
+                <img src=""/>
+                <div class="caption">
+                    <h4 class="pull-right">$24.99</h4>
+                    <h4>
+                        <a href="/Review/Index">Add Review</a>
+                    </h4>
+                    <div class="ratings">
+                        <p class="pull-right">15 reviews</p>
+                        <p>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                            <span class="glyphicon glyphicon-star"></span>
+                        </p>
+
+                        <h2> @Html.DisplayFor(modelItem => listMuscians.Artist)</h2>
+                        <img src="@listMuscians.Image_url" alt="Album Cover" height="350" width="350" />
+                        <h2>@Html.ActionLink("More Info", "Details", new { id = listMuscians.Id })</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+       
 
     }
   }

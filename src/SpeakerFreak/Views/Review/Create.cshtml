@@ -25,15 +25,13 @@
             @Html.TextBoxFor(model => model.Date, new { @class = "form-group", placeholder = "dd-mm-year" })
             <br /><br />
             @Html.LabelFor(model => model.Commments)
-            @Html.TextBoxFor(model => model.Commments, new { @class = "form-control", style = "height: 70px;", placeholder = "Comments" })
-            
+            @Html.TextBoxFor(model => model.Commments, new { @class = "form-control", style = "height: 70px;", placeholder = "Comments" })            
             <br /><br />
-
-
             <input type="submit" value="Create" class="btn btn-primary" />
             <br />
-            
+            <br />   
             @Html.ActionLink("Return", "Index", "Review")
+            <hr />
         </div>
         }
     }

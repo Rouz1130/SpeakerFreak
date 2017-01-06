@@ -7,8 +7,68 @@
 
 @*@using System.Security.Claims*@
 
+    <div class="container" align="center">
+        <h3>Add Artist</h3>
+        <hr>
 
-<div class="container space-lg">
+    @if (User.Identity.IsAuthenticated)
+    {
+        <h4>Create an artist</h4>
+
+
+
+        @using (Html.BeginForm())
+
+        {
+
+            <div class="row col-md-6">
+                <div class="col-md-6">
+                    <div class="list-group">
+                        <div class="list-group-item">
+                            @Html.LabelFor(model => model.Artist)
+                            @Html.TextBoxFor(model => model.Artist)
+                            <br />
+                            @Html.LabelFor(model => model.Album)
+                            @Html.TextBoxFor(model => model.Album)
+                            <br />
+                            @Html.LabelFor(model => model.Image_url)
+                            @Html.TextBoxFor(model => model.Image_url)
+                            <br />
+                            @Html.LabelFor(model => model.Genre)
+                            @Html.TextBoxFor(model => model.Genre)
+                            <br />
+                            @Html.LabelFor(model => model.Year)
+                            @Html.TextBoxFor(model => model.Year)
+                            <br />
+                            @Html.LabelFor(model => model.Rating)
+                            @Html.TextBoxFor(model => model.Rating)
+                            <br />
+                            <input type="submit" value="Upload" class="btn btn-primary" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+           
+        }
+
+    }
+
+
+    @Html.ActionLink("Back to Artists", "Index", "Music")
+
+</div>
+
+@*@model SpeakerFreak.Models.Music
+
+@{
+    ViewData["Title"] = "Music";
+    Layout = "~/Views/Shared/_LayoutNav.cshtml";
+}*@
+
+@*@using System.Security.Claims*@
+
+
+@*<div class="container space-lg">
     <h2>Add Artist</h2>
     <hr />
     @if (User.Identity.IsAuthenticated)
@@ -16,34 +76,34 @@
         <h4>Create an artist</h4>
 
 
-    @using (Html.BeginForm())
+        @using (Html.BeginForm())
         {
-        @Html.LabelFor(model => model.Artist)
-        @Html.TextBoxFor(model => model.Artist)
-        <br />
-        @Html.LabelFor(model => model.Album)
-        @Html.TextBoxFor(model => model.Album)
-        <br />
-        @Html.LabelFor(model => model.Image_url)
-        @Html.TextBoxFor(model => model.Image_url)
-        <br />
-        @Html.LabelFor(model => model.Genre)
-        @Html.TextBoxFor(model => model.Genre)
-        <br />
-        @Html.LabelFor(model => model.Year)
-        @Html.TextBoxFor(model => model.Year)
-        <br />
-        @Html.LabelFor(model => model.Rating)
-        @Html.TextBoxFor(model => model.Rating)
-        <br />
+            @Html.LabelFor(model => model.Artist)
+            @Html.TextBoxFor(model => model.Artist)
+            <br />
+            @Html.LabelFor(model => model.Album)
+            @Html.TextBoxFor(model => model.Album)
+            <br />
+            @Html.LabelFor(model => model.Image_url)
+            @Html.TextBoxFor(model => model.Image_url)
+            <br />
+            @Html.LabelFor(model => model.Genre)
+            @Html.TextBoxFor(model => model.Genre)
+            <br />
+            @Html.LabelFor(model => model.Year)
+            @Html.TextBoxFor(model => model.Year)
+            <br />
+            @Html.LabelFor(model => model.Rating)
+            @Html.TextBoxFor(model => model.Rating)
+            <br />
 
 
 
-        <input type="submit" value="Upload" class="btn btn-primary" />
+            <input type="submit" value="Upload" class="btn btn-primary" />
 
-      }
-  }
+        }
+    }
 
-    @Html.ActionLink("Back to Artists","Index","Music")
+    @Html.ActionLink("Back to Artists", "Index", "Music")
 
-</div>
+</div>*@

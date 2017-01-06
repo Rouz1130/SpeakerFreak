@@ -95,6 +95,8 @@ namespace SpeakerFreak.Controllers
             await _signInManager.SignOutAsync();
             return RedirectToAction("Index");
         }
+
+       
        
     }
 }
